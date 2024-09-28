@@ -16,10 +16,46 @@ function Home() {
             <h1> Campus Bites </h1>
         </div>
         <div className="list-container">
-        <div className="items-list">
+        <div className="items-list" >
             <ul>
                 <li> Fe </li>
                 <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
+                <li> Fe </li>
+                <li> Fi </li>
+                <li> Fo </li>
+                <li> Fum </li>
                 <li> Fo </li>
                 <li> Fum </li>
                 <li> Fe </li>

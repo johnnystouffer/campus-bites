@@ -1,6 +1,7 @@
 body {
     background-color: beige;
     margin: 0;
+    overflow: hidden;
 }
 
 html {
@@ -13,13 +14,14 @@ html {
 }
 
 .top-bar {
-    height: 40px;
+    height: 5vh;
     width: 100vw;
     background-color: aquamarine;
     display: flex;
     border: none;
     align-items: center;
     justify-content: center;
+    min-height: 30px;
 }
 
 .logo {
@@ -38,9 +40,11 @@ html {
 }
 
 .items-list {
-    align-items: center;
+    display: flex;
     justify-content: center;
     width: 95vw;
     background-color: brown;
+    height: 70vh;
+    overflow: scroll;
 }
 
