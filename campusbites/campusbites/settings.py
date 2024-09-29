@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'deals',
     'rest_framework',
     'corsheaders',
+    'gpt',
 ]
 
 MIDDLEWARE = [
