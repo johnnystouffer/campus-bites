@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import api from '../../api'
+
 
 function EventSubmissionForm() {
+  const navigate = useNavigate();
+
   // State variables for each form field
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
@@ -36,14 +41,20 @@ function EventSubmissionForm() {
       charity,
     };
 
+    console.log(ACCESS_TOKEN, REFRESH_TOKEN);
+
     try {
       // Make the POST request to the backend API
-      const response = await axios.post('http://localhost:8000/deals/', postData);
+      
+      const response = await axios.post('http://localhost:8000/api/deals/', postData);
 
       // Handle success
       setSubmissionStatus('Event submitted successfully!');
+      alert("Post Uploaded! An admin or moderator will review your post")
+      navigate('/')
       // Optionally, reset the form fields
       resetForm();
+      
     } catch (error) {
       // Handle error
       setErrorMessage('Error submitting the event. Please try again.');

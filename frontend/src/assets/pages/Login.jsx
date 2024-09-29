@@ -19,13 +19,15 @@ function Login() {
     setError(false);
 
     try {
-      console.log(api.defaults.baseURL)
       // get a response from the API
       const response = await api.post('users/token/', { username, password });
 
       // if there is no error in the response then we set the tokens
       localStorage.setItem(ACCESS_TOKEN, response.data.access);
       localStorage.setItem(REFRESH_TOKEN, response.data.refresh);
+
+      console.log(ACCESS_TOKEN);
+      console.log(REFRESH_TOKEN);
 
       // Redirect to the home page after successful login
       navigate('/');
