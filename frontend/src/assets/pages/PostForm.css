@@ -25,3 +25,9 @@
     width: 124px;
     background-color: rgb(141, 201, 148);
 }
+
+.overall-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

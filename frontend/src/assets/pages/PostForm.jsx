@@ -80,6 +80,7 @@ function EventSubmissionForm() {
   };
 
   return (
+    <div className='overall-container'>
     <div className="event-container">
       <h2>Submit an Event</h2>
       {submissionStatus && <p style={{ color: 'green' }}>{submissionStatus}</p>}
@@ -208,6 +209,7 @@ function EventSubmissionForm() {
         {/* Submit Button */}
         <button className="submit" id="post" type="submit">Submit Event</button>
       </form>
+    </div>
     </div>
   );
 }
