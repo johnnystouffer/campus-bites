@@ -11,6 +11,10 @@ html {
 .elem {
     margin-right: 20px;
     margin-left: 20px;
+    transition: all 0.4s ease-out;
+}
+.elem:hover {
+    color: pink;
 }
 
 .top-bar {
@@ -22,6 +26,7 @@ html {
     align-items: center;
     justify-content: center;
     min-height: 30px;
+    font-family: "QLD";
 }
 
 .logo {
@@ -31,23 +36,23 @@ html {
     width: 100vw;
     height: 20vh;
     background-color: #e09fbb;
+    font-family: "QLD";
+    font-size: large;
 }
 
 .list-container {
-    display: flex;
-    justify-content: center;
     background-color: #bdebb5;
-    min-height: 70vh;
-    margin: 2%;
+    min-height: 80vh;
+    margin: 0;
 }
 
 .card-list {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     overflow: scroll;
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
