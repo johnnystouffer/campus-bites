@@ -9,13 +9,15 @@ html {
 }
 
 .elem {
+    display: flex;
     margin-right: 20px;
     margin-left: 20px;
     transition: all 0.3s ease-out;
     background-color:#e9a5c3;
     border-radius: 3px;
     padding: 3px;
-    min-width: 40px;
+    min-width: 50px;
+    justify-content: center;
 }
 
 .elem:hover {
