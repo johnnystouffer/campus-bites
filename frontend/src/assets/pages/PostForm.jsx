@@ -38,7 +38,7 @@ function EventSubmissionForm() {
 
     try {
       // Make the POST request to the backend API
-      const response = await axios.post('http://localhost:8000/api/posts/', postData);
+      const response = await axios.post('http://localhost:8000/deals/', postData);
 
       // Handle success
       setSubmissionStatus('Event submitted successfully!');
