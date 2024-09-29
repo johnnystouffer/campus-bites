@@ -3,7 +3,7 @@ import { ACCESS_TOKEN } from "./constants"
 
 // automatically put the base url so we just disclose the path
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: 'http://127.0.0.1:8000/'
 });
 
 // configure the api request if we have a token or error

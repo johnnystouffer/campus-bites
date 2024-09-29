@@ -19,6 +19,7 @@ function Login() {
     setError(false);
 
     try {
+      console.log(api.defaults.baseURL)
       // get a response from the API
       const response = await api.post('users/token/', { username, password });
 

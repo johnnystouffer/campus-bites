@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import './Register.css';
+import api from '../../api'
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   // State variables to store form inputs
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   // Handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-    // Implement your registration logic here
-
-
     // Clear form fields after submission
     setUsername('');
-    setEmail('');
     setPassword('');
+
+    try {
+      const response = api.post('users/register/', { username, password });
+      console.log(response);
+      alert("Successfully added user, please log in now");
+      navigate('/login');
+    } catch {
+      alert("This user already exists");
+    }
   };
 
   return (
@@ -33,14 +39,6 @@ function Register() {
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            />
-            <input 
-            type="email"
-            placeholder="Enter Email"
-            name="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             />
             <input 
             type="password"
