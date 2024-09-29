@@ -35,9 +35,5 @@ class Post(models.Model):
     hosting_organization = models.CharField(max_length=25)
     charity = models.BooleanField(default=False)
     
-    
-    
-    
-
     def __str__(self):
         return f"{self.event_name} at {self.address}"

@@ -6,6 +6,7 @@ import Home from './assets/pages/Home.jsx'
 import Login from './assets/pages/Login.jsx'
 import Register from './assets/pages/Register.jsx'
 import "./main.css"
+import PostForm from './assets/pages/PostForm.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path : '/register',
     element : <Register></Register>
+  },
+  {
+    path : '/postevent',
+    element : <PostForm></PostForm>
   }
 ])
 
