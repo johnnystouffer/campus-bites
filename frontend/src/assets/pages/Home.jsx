@@ -14,12 +14,12 @@ function Home() {
             <a href="/register" className="elem"> Register </a>
         </div>
         <div className="logo">
-            <h1> Campus Bites </h1>
+            <h1>~~ Campus Bites ~~</h1>
         </div>
         <div className="list-container">
             <div className="card-list" >
-                <Card eventName="$7 burrito with drink" date={new Date("December 17, 2024 12:00:00")} />
-                <Card eventName="$7 burrito with drink" date={new Date("December 17, 2024 12:00:00")} />
+                <Card eventName="$7 burrito with drink" orgName="Qdoba" date={new Date("December 17, 2024 00:00:00")} />
+                <Card eventName="Free pizza" orgName="Robotics Club" date={new Date("October 31, 2024 13:00:00")} />
             </div>
         </div>
     </>
