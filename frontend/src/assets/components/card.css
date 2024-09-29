@@ -19,10 +19,6 @@
     color: black;
 }
 
-.card-container:hover {
-    cursor: pointer;
-}
-
 #org-name {
     color: grey;
 }

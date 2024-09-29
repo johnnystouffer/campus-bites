@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api'
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
+import "./PostForm.css"
 
 
 function EventSubmissionForm() {
@@ -83,7 +84,7 @@ function EventSubmissionForm() {
       <h2>Submit an Event</h2>
       {submissionStatus && <p style={{ color: 'green' }}>{submissionStatus}</p>}
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <form onSubmit={handleSubmit}>
+      <form className="post-form" onSubmit={handleSubmit}>
         {/* Price */}
         <div>
           <label>Price ($0.00 - $99.99):</label>
@@ -205,7 +206,7 @@ function EventSubmissionForm() {
         </div>
 
         {/* Submit Button */}
-        <button type="submit">Submit Event</button>
+        <button className="submit" id="post" type="submit">Submit Event</button>
       </form>
     </div>
   );
