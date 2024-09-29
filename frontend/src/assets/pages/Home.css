@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'QLD';
+    src: url('../EduQLDBeginner-VariableFont_wght.ttf');
+}
+
 body {
     background-color: beige;
     margin: 0;
     overflow: hidden;
+    font-family: 'QLD';
 }
 
 html {
@@ -14,10 +20,11 @@ html {
     margin-left: 20px;
     transition: all 0.3s ease-out;
     background-color:#e9a5c3;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 3px;
-    min-width: 50px;
+    min-width: 70px;
     justify-content: center;
+    color:white;
 }
 
 .elem:hover {
@@ -41,18 +48,20 @@ html {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 20vh;
+    height: 18vh;
+    color: white;
     background-color: #e09fbb;
     font-family: "QLD";
-    font-size: large;
+    font-size:xx-large;
+    text-shadow: 2px 2px rgb(192, 130, 180);
 }
 
 .list-container {
     background-color: #bdebb5;
-    min-height: 75vh;
-    max-height: 75vh;
+    min-height: 70vh;
+    max-height: 70vh;
     margin: 0;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .card-list {
@@ -64,4 +73,54 @@ html {
 a {
     text-decoration: none;
     color: black;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e09fbb;
+    color: white;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: large;
+}
+
+.filter > button {
+    padding: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+}
+
+.filter > input {
+    width: 10px
+}
+
+#submit-filters {
+    font-family: 'QLD';
+    border: none;
+    background-color: #e06e9f;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+#submit-filters:hover {
+    background-color:#bdebb5;
+}
+
+.no-events {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(72, 142, 79);
+    font-size: x-large;
 }

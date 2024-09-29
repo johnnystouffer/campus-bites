@@ -1,56 +1,133 @@
-import React, { useState, useEffect } from 'react';  // Import useEffect as well
-import './Home.css'
-import Login from "./Login";
-import PostForm from "./PostForm.jsx";
-import Register from "./Register"; 
-import { Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import './Home.css';
 import Card from "../components/card.jsx";
 import api from '../../api.js';
 
 function Home() {
-
     const [data, updateData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
 
-    // Use useEffect to call the API when the component mounts
+    // Filter states
+    const [priceFilter, setPriceFilter] = useState("");
+    const [cuisineFilter, setCuisineFilter] = useState("");
+    const [dateFilter, setDateFilter] = useState("");
+
     useEffect(() => {
         const getApiData = async () => {
             try {
                 const response = await api.get('api/deals/');
-                console.log('we got a response lets fucking GOOOOOOOOOOOOOOOOO');
                 updateData(response.data);
+                setFilteredData(response.data);  // Initially display all data
             } catch (error) {
                 console.error(error);
             }
         };
 
         getApiData();
-    }, []);  // The empty array ensures this runs only once, on mount
+    }, []);
+
+    // Function to handle filtering the data when the user triggers it
+    const applyFilters = () => {
+        let filtered = data;
+
+        if (priceFilter) {
+            filtered = filtered.filter(event => parseFloat(event.price) <= parseFloat(priceFilter));
+        }
+
+        if (cuisineFilter) {
+            filtered = filtered.filter(event => event.cuisine?.toLowerCase().includes(cuisineFilter.toLowerCase()));
+        }
+
+        if (dateFilter) {
+            filtered = filtered.filter(event => event.date_of_event === dateFilter);
+        }
+
+        setFilteredData(filtered);
+    };
+
+    // Reset filters and clear input fields
+    const resetFilters = () => {
+        setPriceFilter("");
+        setCuisineFilter("");
+        setDateFilter("");
+        setFilteredData(data);  // Reset to the full dataset
+    };
 
     return (
         <>
             <div className="top-bar">
-                <a href="/postevent" className='elem'> POST</a>
+                <a href="/postevent" className='elem'>POST</a>
                 <br />
-                <a href="/login" className="elem"> Login </a>
+                <a href="/login" className="elem">LOGIN</a>
                 <br />
-                <a href="/register" className="elem"> Register </a>
+                <a href="/register" className="elem">REGISTER</a>
             </div>
             <div className="logo">
                 <h1>~~ Campus Bites ~~</h1>
             </div>
+            
+            {/* Filters */}
+            <div className="filters">
+                <div className="filter">
+                    <label>Max Price:</label>
+                    <input 
+                        type="number" 
+                        value={priceFilter} 
+                        onChange={(e) => setPriceFilter(e.target.value)} 
+                        placeholder="Enter max price"
+                    />
+                </div>
+
+                <div className="filter">
+                    <label>Cuisine:</label>
+                    <input 
+                        type="text" 
+                        value={cuisineFilter} 
+                        onChange={(e) => setCuisineFilter(e.target.value)} 
+                        placeholder="Enter cuisine type"
+                    />
+                </div>
+
+                <div className="filter">
+                    <label>By Date:</label>
+                    <input 
+                        type="date" 
+                        value={dateFilter} 
+                        onChange={(e) => setDateFilter(e.target.value)} 
+                    />
+                </div>
+
+                <div className="filter">
+                    <button id='submit-filters' type='button' onClick={applyFilters}>APPLY FILTERS</button>
+                </div>
+
+                <div className='filter'>
+                    <button id='submit-filters' type='button' onClick={resetFilters}>RESET</button>
+                </div>
+            </div>
+            
+            {/* Card List */}
             <div className="list-container">
                 <div className="card-list">
-                    {data.length > 0 ? (
-                        data.map((event, index) => (
+                    {filteredData.length > 0 ? (
+                        filteredData.map((event, index) => (
                             <Card
                                 key={index}  // Add a unique key for each card
+                                price={event.price}
                                 eventName={event.event_name}
-                                orgName={event.description} // Assuming hosting_organization is not present, using description instead
+                                caloriePerDollar={event.calorie_per_dollar}
+                                description={event.description}
+                                orgName={event.hosting_organization} // Assuming hosting_organization is not present, using description instead
                                 date={event.date_of_event}
+                                time={event.time_of_event}
+                                address={event.address}
+                                cuisine={event.cuisine}
                             />
                         ))
                     ) : (
-                        <p>Loading events...</p>  // Optional: Loading message or default content
+                        <div className="no-events-container">
+                            <p className='no-events'>No events match the filters...</p>
+                        </div>
                     )}
                 </div>
             </div>
