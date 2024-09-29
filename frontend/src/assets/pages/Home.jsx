@@ -29,7 +29,9 @@ function Home() {
     return (
         <>
             <div className="top-bar">
-                <a href="/login" className="elem"> Login   </a>
+                <a href="/postevent" className='elem'> POST</a>
+                <br />
+                <a href="/login" className="elem"> Login </a>
                 <br />
                 <a href="/register" className="elem"> Register </a>
             </div>

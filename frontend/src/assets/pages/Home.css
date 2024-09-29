@@ -11,11 +11,15 @@ html {
 .elem {
     margin-right: 20px;
     margin-left: 20px;
-    transition: all 0.4s ease-out;
+    transition: all 0.3s ease-out;
+    background-color:#e9a5c3;
+    border-radius: 3px;
+    padding: 3px;
+    min-width: 40px;
 }
 
 .elem:hover {
-    color: pink;
+    background-color: rgb(141, 201, 148);
 }
 
 .top-bar {
@@ -43,7 +47,8 @@ html {
 
 .list-container {
     background-color: #bdebb5;
-    min-height: 80vh;
+    min-height: 75vh;
+    max-height: 75vh;
     margin: 0;
     overflow: auto;
 }
