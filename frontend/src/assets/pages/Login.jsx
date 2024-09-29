@@ -41,11 +41,11 @@ function Login() {
   return (
     <div className='overall-container'>
       <div className="login-container">
-        <h2>Login</h2>
+        <h1>Log In</h1>
         <form className='form-container' onSubmit={handleLogin}>
           <input
             type="text"
-            placeholder="Enter Username"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             name="username"
@@ -53,13 +53,13 @@ function Login() {
           />
           <input
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             required
           />
-          <button type="submit">Submit</button>
+          <button className="submit" type="submit">Onwards!</button>
         </form>
       </div>
     </div>
