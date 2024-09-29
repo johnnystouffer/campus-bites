@@ -1,30 +1,60 @@
 .login-container {
     display: flex;
     flex-direction: column;
+    height: 35vh;
+    min-height: 200px;
+    width: 25vw;
+    min-width: 200px;
     align-items: center;
-    background-color: chocolate;
+    background-color: #bdebb5;
     padding: 25px;
-    border-radius: 5px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .overall-container {
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     overflow: hidden;
+    background-color: beige;
+    font-family: "QLD";
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 input {
-    margin: 5px;
+    margin: 2vh;
+    height: 21px;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 150px;
+    padding-left: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 3px;
 }
 
-button {
-    margin: 5px;
+.submit {
+    height: 21px;
+    width: 76px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e09fbb;
+    margin: 2vh;
+    border-style: outset;
+    border-radius: 3px;
+    transition: all 0.4s ease-out;
+}
+.submit:hover {
+    height: 25px;
+    width: 80px;
+    cursor: pointer;
+    background-color: #e06e9f;
 }

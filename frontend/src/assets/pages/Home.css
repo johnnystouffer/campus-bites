@@ -24,7 +24,7 @@ html {
     display: flex;
     border: none;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     min-height: 30px;
     font-family: "QLD";
 }
