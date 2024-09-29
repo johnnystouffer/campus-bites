@@ -22,12 +22,17 @@ function Login() {
       // get a response from the API
       const response = await api.post('users/token/', { username, password });
 
+      //console.log(ACCESS_TOKEN);
+      //console.log(REFRESH_TOKEN);
+
       // if there is no error in the response then we set the tokens
       localStorage.setItem(ACCESS_TOKEN, response.data.access);
       localStorage.setItem(REFRESH_TOKEN, response.data.refresh);
 
-      console.log(ACCESS_TOKEN);
-      console.log(REFRESH_TOKEN);
+      //console.log(ACCESS_TOKEN);
+      console.log(localStorage.getItem(ACCESS_TOKEN));
+      console.log(localStorage.getItem(REFRESH_TOKEN));
+      //console.log(REFRESH_TOKEN);
 
       // Redirect to the home page after successful login
       navigate('/');

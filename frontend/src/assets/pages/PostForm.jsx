@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api'
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants';
 
 
 function EventSubmissionForm() {
   const navigate = useNavigate();
+
+  const token = localStorage.getItem(ACCESS_TOKEN);
+  const refresh = localStorage.getItem(REFRESH_TOKEN);
 
   // State variables for each form field
   const [price, setPrice] = useState('');
@@ -41,12 +45,10 @@ function EventSubmissionForm() {
       charity,
     };
 
-    console.log(ACCESS_TOKEN, REFRESH_TOKEN);
-
     try {
       // Make the POST request to the backend API
       
-      const response = await axios.post('http://localhost:8000/api/deals/', postData);
+      const response = await api.post('http://localhost:8000/api/deals/', postData);
 
       // Handle success
       setSubmissionStatus('Event submitted successfully!');
@@ -54,7 +56,7 @@ function EventSubmissionForm() {
       navigate('/')
       // Optionally, reset the form fields
       resetForm();
-      
+
     } catch (error) {
       // Handle error
       setErrorMessage('Error submitting the event. Please try again.');
