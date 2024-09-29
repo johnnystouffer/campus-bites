@@ -3,6 +3,7 @@ import './Home.css'
 import Login from "./Login"
 import Register from "./Register" 
 import { Route, Routes } from 'react-router-dom'
+import Card from "../components/card.jsx"
 
 
 function Home() {
@@ -16,66 +17,10 @@ function Home() {
             <h1> Campus Bites </h1>
         </div>
         <div className="list-container">
-        <div className="items-list" >
-            <ul>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-                <li> Fe </li>
-                <li> Fi </li>
-                <li> Fo </li>
-                <li> Fum </li>
-            </ul>
-        </div>
+            <div className="card-list" >
+                <Card eventName="$7 burrito with drink" date={new Date("December 17, 2024 12:00:00")} />
+                <Card eventName="$7 burrito with drink" date={new Date("December 17, 2024 12:00:00")} />
+            </div>
         </div>
     </>
 }
