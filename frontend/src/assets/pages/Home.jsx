@@ -1,6 +1,7 @@
 import react from "react";
 import './Home.css'
 import Login from "./Login"
+import PostForm from "./PostForm.jsx"
 import Register from "./Register" 
 import { Route, Routes } from 'react-router-dom'
 import Card from "../components/card.jsx"
