@@ -1,6 +1,7 @@
 from decimal import Decimal
 from datetime import date, time, datetime
 from django.db import models
+from geopy.geocoders import Nominatim
 
 # Create your models here.
 class Post(models.Model):
@@ -35,9 +36,27 @@ class Post(models.Model):
     hosting_organization = models.CharField(max_length=25)
     charity = models.BooleanField(default=False)
     
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    
     
     
     
 
     def __str__(self):
         return f"{self.event_name} at {self.address}"
+
+    
+    def get_lat_long(self):
+        if not self.latitude or not self.longitude:
+            geolocator = Nominatim(user_agent="deals")
+            location = geolocator.geocode(self.address)
+            if location:
+                self.latitude = Decimal(location.latitude)
+                self.longitude = Decimal(location.longitude)
+                self.save()
+        super(Post, self).save()
+            
+           
+    
+        
