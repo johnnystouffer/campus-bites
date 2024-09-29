@@ -16,7 +16,7 @@ html {
 .top-bar {
     height: 5vh;
     width: 100vw;
-    background-color: aquamarine;
+    background-color: #e06e9f;
     display: flex;
     border: none;
     align-items: center;
@@ -30,21 +30,24 @@ html {
     justify-content: center;
     width: 100vw;
     height: 20vh;
-    background-color: blue;
+    background-color: #e09fbb;
 }
 
 .list-container {
     display: flex;
     justify-content: center;
+    background-color: #bdebb5;
+    min-height: 70vh;
     margin: 2%;
 }
 
-.items-list {
+.card-list {
     display: flex;
-    justify-content: center;
-    width: 95vw;
-    background-color: brown;
-    height: 70vh;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     overflow: scroll;
 }
 
+a {
+    text-decoration: none;
+}
