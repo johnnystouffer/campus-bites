@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Card from "../components/card.jsx";
 import api from '../../api.js';
+import HtmlDisplay from "/src/assets/components/HtmlDisplay.jsx";
+
 
 function Home() {
     const [data, updateData] = useState([]);
@@ -129,6 +131,9 @@ function Home() {
                             <p className='no-events'>No events match the filters...</p>
                         </div>
                     )}
+                </div>
+                <div className='dynamic-content'>
+                    <HtmlDisplay />
                 </div>
             </div>
         </>
