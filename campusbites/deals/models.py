@@ -30,6 +30,14 @@ class Post(models.Model):
     # posted
     submission_time = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    
+    cuisine = models.CharField(max_length=25)
+    hosting_organization = models.CharField(max_length=25)
+    charity = models.BooleanField(default=False)
+    
+    
+    
+    
 
     def __str__(self):
         return f"{self.event_name} at {self.address}"
