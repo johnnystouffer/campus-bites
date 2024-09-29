@@ -1,10 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import PostView
+#from .views import PostView
+from . import views
 
 router = DefaultRouter()
-router.register(r'deals', PostView, 'deal')
+#router.register(r'deals', PostView, 'deal')
 
 urlpatterns = [
-    path('', include(router.urls))
+    
+    path('', views.getData),
+    path('create/', views.createPost) 
 ]

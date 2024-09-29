@@ -1,12 +1,20 @@
 from decimal import Decimal
 from datetime import date, time, datetime
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
+
+
+class User(AbstractUser):
+    def __str__(self):
+        return self.username
 class Post(models.Model):
     """
     A specific post that gets added to our database.
     """
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='notes')
 
     # the price of the deal should be any from $0 to $99.99
     price = models.DecimalField(max_digits=4, decimal_places=2)
