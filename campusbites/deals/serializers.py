@@ -6,4 +6,5 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         # all of the fields that you can get with the api
         fields = ['id', 'price', 'description', 'event_name', 'address',
-                  'calorie_per_dollar', 'date_of_event', 'time_of_event']
+                  'calorie_per_dollar', 'date_of_event', 'time_of_event', 
+                  'cuisine', 'hosting_organization']
