@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../api'
+import './GptPrompt.css'
 
 function GptPrompt() {
     const [prompt, changePrompt] = useState("");
@@ -12,28 +13,34 @@ function GptPrompt() {
 
     const sendPrompt = async (e) => {
         e.preventDefault();
-
+        setError('');
+    
         try {
-            const response = await api.post('gpt/', { input : prompt });
-
+            const response = await fetch('http://localhost:8000/gpt/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ input: prompt }),
+            });
+    
             const data = await response.json();
             if (response.ok) {
+                //print("response ok")
                 setResponseText(data.output);
             } else {
                 setError(data.error || 'Something went wrong');
-                console.log(data.error);
             }
         } catch (err) {
-            console.error(err);
             setError('Failed to connect to the server');
         }
     };
 
     return (
-        <div className='overall-container'>
-            <div>
+        <div id='overall-container'>
+            <div id='submit-container'>
                 <h2> What would you like to eat?</h2>
-                <input type="text" onChange={handleSentence} />
+                <input id='unique-input' type="text" onChange={handleSentence} />
                 <button type="submit" onClick={sendPrompt}> Send </button>
             </div>
             <div>

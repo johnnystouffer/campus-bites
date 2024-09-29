@@ -12,7 +12,7 @@ from deals.models import Post
 
 load_dotenv()
 
-with open('gpt/apikey.txt', 'r') as file:
+with open('gpt/key.txt', 'r') as file:
     api_key = file.read().strip()
 
 client = OpenAI(api_key=api_key)

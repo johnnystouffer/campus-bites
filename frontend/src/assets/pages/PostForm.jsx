@@ -90,6 +90,7 @@ function EventSubmissionForm() {
         <div>
           <label>Price ($0.00 - $99.99):</label>
           <input
+            id='posting'
             type="number"
             step="0.01"
             min="0"
@@ -104,6 +105,7 @@ function EventSubmissionForm() {
         <div>
           <label>Description (max 40 chars):</label>
           <input
+          id='posting'
             type="text"
             maxLength="40"
             value={description}
@@ -116,6 +118,7 @@ function EventSubmissionForm() {
         <div>
           <label>Event Name (max 25 chars):</label>
           <input
+          id='posting'
             type="text"
             maxLength="25"
             value={eventName}
@@ -128,6 +131,7 @@ function EventSubmissionForm() {
         <div>
           <label>Address (max 50 chars):</label>
           <input
+          id='posting'
             type="text"
             maxLength="50"
             value={address}
@@ -140,6 +144,7 @@ function EventSubmissionForm() {
         <div>
           <label>Calories per Dollar (e.g., 100.0):</label>
           <input
+          id='posting'
             type="number"
             step="0.1"
             min="0"
@@ -154,6 +159,7 @@ function EventSubmissionForm() {
         <div>
           <label>Date of Event:</label>
           <input
+          id='posting'
             type="date"
             value={dateOfEvent}
             onChange={(e) => setDateOfEvent(e.target.value)}
@@ -165,6 +171,7 @@ function EventSubmissionForm() {
         <div>
           <label>Time of Event:</label>
           <input
+          id='posting'
             type="time"
             value={timeOfEvent}
             onChange={(e) => setTimeOfEvent(e.target.value)}
@@ -176,6 +183,7 @@ function EventSubmissionForm() {
         <div>
           <label>Cuisine (max 25 chars):</label>
           <input
+          id='posting'
             type="text"
             maxLength="25"
             value={cuisine}
@@ -188,6 +196,7 @@ function EventSubmissionForm() {
         <div>
           <label>Hosting Organization (max 25 chars):</label>
           <input
+          id='posting'
             type="text"
             maxLength="25"
             value={hostingOrganization}
@@ -200,6 +209,7 @@ function EventSubmissionForm() {
         <div>
           <label>Is this a charity event?</label>
           <input
+          id='posting'
             type="checkbox"
             checked={charity}
             onChange={(e) => setCharity(e.target.checked)}

@@ -38,3 +38,10 @@ html {
 #register:hover {
     background-color: #85c979;
 }
+
+#next {
+    margin: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    border: none;
+}

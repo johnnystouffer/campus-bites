@@ -4,7 +4,7 @@
     height: 90vh;
     min-height: 600px;
     width: 70vw;
-    min-width: 500px;
+    min-width: 200px;
     justify-content: center;
     align-items: center;
     background-color: #e9a5c3;
@@ -41,4 +41,8 @@
     padding: 14px;
     color: white;
     border-radius: 10px;
+}
+
+#posting {
+    margin: 20px;
 }

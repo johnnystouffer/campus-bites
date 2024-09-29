@@ -123,4 +123,11 @@ a {
     align-items: center;
     color: rgb(72, 142, 79);
     font-size: x-large;
+    margin: 90px;
+}
+
+#thing {
+    width: 100px;
+    font-family: 'QLD';
+    margin: 10px;
 }

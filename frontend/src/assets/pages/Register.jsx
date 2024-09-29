@@ -33,6 +33,7 @@ function Register() {
         <h1>Register</h1>
         <form className="form-container" onSubmit={handleSubmit}>
             <input 
+            id='next'
             type="text"
             placeholder="Username"
             name="username"
@@ -41,6 +42,7 @@ function Register() {
             onChange={(e) => setUsername(e.target.value)}
             />
             <input 
+            id='next'
             type="password"
             placeholder="Password"
             name="password"

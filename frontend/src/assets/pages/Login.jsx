@@ -49,6 +49,7 @@ function Login() {
         <h1>Log In</h1>
         <form className='form-container' onSubmit={handleLogin}>
           <input
+            id='in'
             type="text"
             placeholder="Username"
             value={username}
@@ -57,6 +58,7 @@ function Login() {
             required
           />
           <input
+            id='in'
             type="password"
             placeholder="Password"
             value={password}

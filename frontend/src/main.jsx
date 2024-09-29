@@ -7,6 +7,7 @@ import Login from './assets/pages/Login.jsx'
 import Register from './assets/pages/Register.jsx'
 import "./main.css"
 import PostForm from './assets/pages/PostForm.jsx'
+import GptPrompt from './assets/pages/GptPrompt.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,11 +20,15 @@ const router = createBrowserRouter([
   },
   {
     path : '/register',
-    element : <Register></Register>
+    element : <Register></Register>,
   },
   {
     path : '/postevent',
-    element : <PostForm></PostForm>
+    element : <PostForm></PostForm>,
+  },
+  {
+    path : '/gptdecider',
+    element : <GptPrompt></GptPrompt>
   }
 ])
 

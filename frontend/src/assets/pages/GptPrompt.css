@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'QLD';
+    src: url('../EduQLDBeginner-VariableFont_wght.ttf');
+}
+
+#overall-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Aligns text to the left, can be changed to 'center' if needed */
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    border: none;
+    background-color: palevioletred;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    font-family: 'QLD';
+    cursor: pointer;
+    transition: all 0.2s ease-out
+}
+
+button:hover {
+    background: rgb(232, 121, 158);
+}
+
+#unique-input {
+    font-family: 'QLD';
+    border-radius: 25px;
+    height: 40px;
+    width: 500px;
+    font-size: 20px;
+}
+
+.output-text {
+    font-size: 24px;
+    color:rgb(129, 129, 129);
+}

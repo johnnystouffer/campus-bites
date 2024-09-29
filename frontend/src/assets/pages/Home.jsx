@@ -3,6 +3,7 @@ import './Home.css';
 import Card from "../components/card.jsx";
 import api from '../../api.js';
 import HtmlDisplay from "/src/assets/components/HtmlDisplay.jsx";
+import GptPrompt from './GptPrompt.jsx';
 
 
 function Home() {
@@ -58,11 +59,14 @@ function Home() {
     return (
         <>
             <div className="top-bar">
+            <a href="/gptdecider" className='elem'> I DON'T KNOW WHAT TO GET</a>
+                <br />
                 <a href="/postevent" className='elem'>POST</a>
                 <br />
                 <a href="/login" className="elem">LOGIN</a>
                 <br />
                 <a href="/register" className="elem">REGISTER</a>
+                <br />
             </div>
             <div className="logo">
                 <h1>~~ Campus Bites ~~</h1>
@@ -73,6 +77,7 @@ function Home() {
                 <div className="filter">
                     <label>Max Price:</label>
                     <input 
+                    id='thing'
                         type="number" 
                         value={priceFilter} 
                         onChange={(e) => setPriceFilter(e.target.value)} 
@@ -83,6 +88,7 @@ function Home() {
                 <div className="filter">
                     <label>Cuisine:</label>
                     <input 
+                        id='thing'
                         type="text" 
                         value={cuisineFilter} 
                         onChange={(e) => setCuisineFilter(e.target.value)} 
@@ -93,6 +99,7 @@ function Home() {
                 <div className="filter">
                     <label>By Date:</label>
                     <input 
+                    id='thing'
                         type="date" 
                         value={dateFilter} 
                         onChange={(e) => setDateFilter(e.target.value)} 
@@ -131,9 +138,6 @@ function Home() {
                             <p className='no-events'>No events match the filters...</p>
                         </div>
                     )}
-                </div>
-                <div className='dynamic-content'>
-                    <HtmlDisplay />
                 </div>
             </div>
         </>
